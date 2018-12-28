@@ -1,0 +1,156 @@
+@media only screen and (max-width: 1350px) {
+  // 1440px
+  .page__body {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .page__nav {
+    width: auto;
+  }
+
+  .navbar__user-profile__picture {
+    margin: 0 15px;
+    max-width: 40px;
+  }
+
+  .navbar__option__label {
+    display: none;
+  }
+
+  .navbar__options {
+    padding: 0px;
+  }
+
+  .navbar__option__icon {
+    margin: 0px;
+    font-size: 16px;
+  }
+
+  .navbar__option {
+    justify-content: center;
+
+    &.active {
+      border-right: unset;
+      color: #6866f9;
+    }
+  }
+}
+
+.page__mobile-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .page__nav,
+  .sidebar {
+    display: none;
+  }
+
+  .page__main {
+    margin-top: 30px;
+  }
+
+  .conversation__title {
+    height: 40px;
+  }
+
+  .page__main,
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar {
+    padding-top: 30px;
+  }
+
+  .sidebar__title {
+    height: 55px;
+  }
+
+  .page__nav {
+    padding-top: 0px;
+  }
+
+  .navbar__option__icon {
+    display: none;
+  }
+
+  .navbar__option__label {
+    display: block;
+  }
+
+  .page__mobile-menu {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    right: 7px;
+    font-size: 40px;
+  }
+
+  .page__mobile-menu--open {
+    .page__nav, .sidebar {
+      display: block;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .page__main {
+      display: none;
+    }
+
+    .lnr-menu:before {
+      content: "\e870";
+    }
+
+    .page__body {
+      flex-flow: column;
+    }
+
+    .navbar__user-profile {
+      display: none;
+    }
+
+    .navbar__options {
+      margin-top: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .navbar__option {
+      margin-left: 20px;
+      font-size: 12px;
+    }
+
+    .sidebar__divisor,
+    .sidebar__title {
+      display: none;
+    }
+  }
+}
+// Menu closed:
+
+
+// .sidebar,
+// .page__nav {
+//   display: none;
+// }
+
+// .page__main {
+//   width: 100%;
+// }
+// oveflow..
+// .page__nav {
+//   width: 90px;
+// }
+// .sidebar {
+//   width: calc(100% - 90px);
+//   position: fixed;
+//   background: #fbfafd;
+//   height: 100%;
+//   left: 70px;
+// }

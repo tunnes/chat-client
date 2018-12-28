@@ -21,19 +21,19 @@ class Navbar extends Component {
         <ul className='navbar__options'>
           <li className={`navbar__option ${this.classActive('CONVERSATIONS')}`} onClick={e => this.props.setNavbarOption('CONVERSATIONS') }>
             <span className='navbar__option__icon lnr lnr-bubble'></span>
-            Conversas
+            <span className='navbar__option__label'>Conversas</span>
           </li>
           <li className={`navbar__option ${this.classActive('CONTACTS')}`} onClick={e => this.props.setNavbarOption('CONTACTS') }>
             <span className='navbar__option__icon lnr lnr-users'></span>
-            Contatos
+            <span className='navbar__option__label'>Contatos</span>
           </li>
           <li className={`navbar__option ${this.classActive('CREATE_GROUP')}`} onClick={e => this.props.setNavbarOption('CREATE_GROUP') }>
             <span className='navbar__option__icon lnr lnr-plus-circle'></span>
-            Novo Grupo
+            <span className='navbar__option__label'>Novo Grupo</span>
           </li>
           <li className='navbar__option' onClick={e => this.props.logout() }>
             <span className='navbar__option__icon lnr lnr-exit'></span>
-            Sair
+            <span className='navbar__option__label'>Sair</span>
           </li>
         </ul>
       </div>

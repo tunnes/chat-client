@@ -4,7 +4,8 @@
   display: flex;
   flex-flow: column;
   padding-top: 45px;
-  padding-left: 60px;
+  min-width: 280px;
+  padding-left: 20px;
 
   &__title {
     margin-top: 0px;

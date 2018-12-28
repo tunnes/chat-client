@@ -1,11 +1,13 @@
 body {
   margin: 0px;
 }
-
+@import "./login_page.scss";
+@import "./chat_page.scss";
 @import "../icons/style.css";
 @import "./navbar.scss";
 @import "./sidebar.scss";
 @import "./conversations.scss";
+@import "./queries.scss";
 
 
 .message__input-control {
