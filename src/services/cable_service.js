@@ -1,6 +1,7 @@
 import ActionCable from 'actioncable'
 import { fillConversations, fillContacts, addMessage, createConversation } from '../store/actions'
 
+import * as type from '../constants/action_types'
 export default class CableService {
   constructor (dispatcher) {
     this.dispatcher = dispatcher
@@ -28,28 +29,27 @@ export default class CableService {
   }
 
   connected () {
-    console.log('connected')
+    // TODO
   }
 
   received (data) {
-    console.log('received', data)
     switch (data.type) {
-      case 'FILL_CONVERSATIONS':
+      case type.FILL_CONVERSATIONS:
         this.dispatcher(
           fillConversations(data.payload)
         )
         break
-      case 'FILL_CONTACTS':
+      case type.FILL_CONTACTS:
         this.dispatcher(
           fillContacts(data.payload)
         )
         break
-      case 'ADD_MESSAGE':
+      case type.ADD_MESSAGE:
         this.dispatcher(
           addMessage(data.payload)
         )
         break
-      case 'CREATE_CONVERSATION':
+      case type.CREATE_CONVERSATION:
         this.dispatcher(
           createConversation(data.payload)
         )
@@ -62,6 +62,6 @@ export default class CableService {
   }
 
   disconnected () {
-    console.log('disconnected')
+    // TODO..
   }
 }

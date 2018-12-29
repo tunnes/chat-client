@@ -5,7 +5,7 @@ import RoomControls from '../containers/room_controls'
 
 import { extractReceiver, scrollDown } from '../utils/index'
 
-class Room extends Component {
+export default class Room extends Component {
   constructor(props) {
     super(props)
     this.roomTitle = this.roomTitle.bind(this)
@@ -47,5 +47,3 @@ class Room extends Component {
     )
   }
 }
-
-export default Room

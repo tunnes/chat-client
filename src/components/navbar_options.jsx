@@ -4,13 +4,15 @@ import Contacts from '../containers/contacts'
 import Conversations from '../containers/conversations'
 import Groups from '../containers/groups'
 
+import * as option from '../constants/navbar_options'
+
 export default props => {
   switch (props.layout.navbarOption) {
-    case 'CONVERSATIONS':
+    case option.CONVERSATIONS:
       return (<Conversations />)
-    case 'CONTACTS':
+    case option.CONTACTS:
       return (<Contacts />)
-    case 'CREATE_GROUP':
+    case option.CREATE_GROUP:
       return (<Groups />)
   }
 }

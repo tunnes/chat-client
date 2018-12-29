@@ -1,0 +1,3 @@
+export const CONTACTS = 'CONTACTS'
+export const CREATE_GROUP = 'CREATE_GROUP'
+export const CONVERSATIONS = 'CONVERSATIONS'

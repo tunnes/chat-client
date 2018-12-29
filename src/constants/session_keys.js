@@ -1,0 +1,2 @@
+export const CHAT_USER_TOKEN = 'CHAT_USER_TOKEN'
+export const CHAT_USER_DATA = 'CHAT_USER_DATA'

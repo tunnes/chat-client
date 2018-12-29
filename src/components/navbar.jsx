@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavbarOption from '../containers/navbar_options'
+import * as option from '../constants/navbar_options'
 export default class Navbar extends Component {
   constructor(props) {
     super(props)
@@ -22,13 +23,13 @@ export default class Navbar extends Component {
     return (
       <div className='page__nav'>
         <ul className='navbar__options'>
-          <li { ...this.optionType('CONVERSATIONS') } >
+          <li { ...this.optionType(option.CONVERSATIONS) } >
             <span className='navbar__option__label'>Conversas</span>
           </li>
-          <li { ...this.optionType('CONTACTS') } >
+          <li { ...this.optionType(option.CONTACTS) } >
             <span className='navbar__option__label'>Contatos</span>
           </li>
-          <li { ...this.optionType('CREATE_GROUP') } >
+          <li { ...this.optionType(option.CREATE_GROUP) } >
             <span className='navbar__option__label'>Novo Grupo</span>
           </li>
           <li className='navbar__option' onClick={e => this.props.logout() }>
