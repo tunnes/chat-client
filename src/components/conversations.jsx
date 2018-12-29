@@ -22,10 +22,9 @@ const activeConversation = (props, conversation) => {
 }
 
 export default props => (
-  <div className='sidebar'>
-    <div className='sidebar__title'>Conversas</div>
-    <hr className='sidebar__divisor'/>
-    <div className='sidebar__items'>
+  <div className='navbar__body'>
+    <hr className='navbar__body__divisor'/>
+    <div className='navbar__body__items'>
       {props.conversations.map((conversation, index) => (
         <div
           className={`conversations__item ${activeConversation(props, conversation)}`}

@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Linearicons-Free';
+  src:  url('../icons/fonts/Linearicons-Free.eot?88ljbs');
+  src:  url('../icons/fonts/Linearicons-Free.eot?88ljbs#iefix') format('embedded-opentype'),
+    url('../icons/fonts/Linearicons-Free.ttf?88ljbs') format('truetype'),
+    url('../icons/fonts/Linearicons-Free.woff?88ljbs') format('woff'),
+    url('../icons/fonts/Linearicons-Free.svg?88ljbs#Linearicons-Free') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.lnr {
+  font-family: 'Linearicons-Free' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lnr-location1:before {
+  content: "\e836";
+}
+.lnr-smile1:before {
+  content: "\e856";
+}
+.lnr-magnifier:before {
+  content: "\e86f";
+}
+.lnr-cross1:before {
+  content: "\e872";
+}
+.lnr-menu1:before {
+  content: "\e873";
+}
+.lnr-question-circle:before {
+  content: "\e87d";
+}
+.lnr-checkmark-circle1:before {
+  content: "\e880";
+}
+.lnr-plus-circle1:before {
+  content: "\e882";
+}
+.lnr-smile:before {
+  content: "\e854";
+}
+.lnr-sad:before {
+  content: "\e855";
+}
+.lnr-location:before {
+  content: "\e835";
+}
+.lnr-checkmark-circle:before {
+  content: "\e87f";
+}
+.lnr-plus-circle:before {
+  content: "\e881";
+}
+.lnr-cross:before {
+  content: "\e870";
+}
+.lnr-menu:before {
+  content: "\e871";
+}
+.lnr-heart:before {
+  content: "\e813";
+}

@@ -1,0 +1,13 @@
+body {
+  font-family: 'SanFrancisco', sans-serif;
+  margin: 0px;
+  color: #4a4a4a;
+}
+
+* {
+  font-display: block;
+
+  &:focus {
+    outline: none;
+  }
+}

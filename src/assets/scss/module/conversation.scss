@@ -1,0 +1,41 @@
+.conversation {
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__title {
+    min-height: 60px;
+    font-size: 64px;
+    font-weight: 100;
+    margin-bottom: 25px;
+  }
+
+  &__divisor {
+    border: none;
+    border-bottom: 1px solid #eaeaf6;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-flow: column;
+    font-weight: 100;
+    color: #bebebf;
+    font-size: 35px;
+    text-align: center;
+    line-height: 49px;
+    min-width: 300px;
+
+    &__icon {
+      font-size: 120px;
+      margin-bottom: 50px;
+    }
+  }
+}

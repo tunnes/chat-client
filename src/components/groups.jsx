@@ -20,12 +20,9 @@ class Groups extends Component {
 
   render () {
     return (
-      <div className='sidebar'>
-        <div className='sidebar__title group'>
-          Novo grupo
-        </div>
-        <div className='sidebar__items'>
-          <div className="sidebar__input" >
+      <div className='navbar__body'>
+        <div className='navbar__body__items'>
+          <div className="navbar__body__input" >
             <input
               type="text"
               placeholder='Digite o nome para o grupo...'
@@ -33,7 +30,7 @@ class Groups extends Component {
               onChange={e => this.props.setGroupName(e.target.value)}
             />
             <i
-              className="lnr lnr-plus-circle sidebar__input__confirm"
+              className="lnr lnr-plus-circle navbar__body__input__confirm"
               onClick={e => this.props.createGroup(this.props.groupForm)}
             />
           </div>

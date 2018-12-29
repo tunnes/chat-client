@@ -17,10 +17,9 @@ const selectContact = (contact, props) => {
 }
 
 export default props => (
-  <div className='sidebar'>
-    <div className='sidebar__title'>Contatos</div>
-    <hr className='sidebar__divisor'/>
-    <div className='sidebar__items'>
+  <div className='navbar__body'>
+    <hr className='navbar__body__divisor'/>
+    <div className='navbar__body__items'>
       {props.contacts.map(contact =>
         <div className='conversations__item' key={contact.id} onClick={(event) => selectContact(contact, props)}>
           <img className='conversations__item__image' src={`https://api.adorable.io/avatars/60/${contact.full_name}`} />

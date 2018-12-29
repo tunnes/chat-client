@@ -66,7 +66,7 @@ const sagas = function* sagas(cableService) {
     }),
 
     takeEvery('SET_CURRENT_CONVERSATION', function*(action){
-      document.querySelector('.page__wrapper').classList.toggle('page__mobile-menu--open')
+      document.querySelector('.page__wrapper').classList.toggle('navbar--open')
       yield put({type: "SET_NAVBAR_OPTION", payload: 'CONVERSATIONS' })
     }),
 

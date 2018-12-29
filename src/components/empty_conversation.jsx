@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default props => (
-  <div className='page__empty-conversation'>
-    {/* <img className='empty-conversation__image' src="https://api.adorable.io/avatars/face/eyes5/nose2/mouth11/faf9fd.png" alt=""/>
-    Selecione uma conversa ou <br/> contato para começar! */}
+  <div className='conversation__empty'>
+    <span className='conversation__empty__icon lnr lnr-question-circle'/>
+    Hey, para conversar com selecione uma <br /> conversa ou contato no menu.
   </div>
 )

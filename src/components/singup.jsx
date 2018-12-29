@@ -41,7 +41,7 @@ class Singup extends Component {
   render() {
     return (
       <div className='form__wrapper'>
-        <form className='form__inner singup'>
+        <form className='form__inner u__large-form'>
           <input placeholder="Nome completo" type="text" value={this.state.full_name} onChange={this.handleFullName} autoComplete="none" />
           <input placeholder="Usuário" type="text" value={this.state.user_name} onChange={this.handleUserName} autoComplete="none" />
           <input placeholder="Senha" type="password" value={this.state.password} onChange={this.handlePassword} autoComplete="none" />

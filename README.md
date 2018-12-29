@@ -1,9 +1,9 @@
 # chat-client
 
 ## Tasks
-- [ ] Improve layout (desk and mobile).
-- [ ] Improve css structure.
-- [ ] Organizate style markup with BEM x SMACSS patterns.
+- [x] Improve layout (desk and mobile).
+- [x] Improve css structure.
+- [x] Organizate style markup with BEM x SMACSS patterns.
 - [ ] Improve components structure (directory, naming and code) and markup.
 - [ ] Improve store and sagas.
 - [ ] Use constants insted magical strings.

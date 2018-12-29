@@ -30,10 +30,11 @@ class CurrentConversation extends Component {
   }
 
   handleSubmit(e) {
+    console.log("click")
     e.preventDefault()
     if (!this.props.messageInput.value) return
 
-    this.setState({...this.state, showEmojis: !this.state.showEmojis })
+    this.setState({...this.state, showEmojis: false })
 
     this.props.createMessage({
       user_id: this.props.currentUser.id,
@@ -44,22 +45,17 @@ class CurrentConversation extends Component {
   }
 
   handleSelectEmoji(data) {
-    console.log(data)
     this.props.typeMessageInput(
       `${this.props.messageInput.value}${data.native}`
     )
   }
 
-  handleShowEmojis(e) {
-
-  }
-
   render() {
     return(
       <div className='conversation__wrapper'>
-        <h2 className='conversation__title'>
+        <div className='conversation__title'>
           {extractReceiver(this.props.currentConversation.users, this.props.currentUser).full_name}
-        </h2>
+        </div>
         <hr className='conversation__divisor'/>
         <div className='message__wrapper'>
           {this.props.currentConversation.messages.map((message, index) =>
@@ -73,14 +69,14 @@ class CurrentConversation extends Component {
             </div>
           )}
         </div>
-        <form onSubmit={this.handleSubmit} className='message__input-control'>
-          <Picker onSelect={this.handleSelectEmoji} style={{display: (this.state.showEmojis ? 'block' : 'none')}}/>
-          <div className='message__input-box'>
+        <div className='message__input-control'>
+          <Picker color="#00d286" onSelect={this.handleSelectEmoji} style={{display: (this.state.showEmojis ? 'block' : 'none')}}/>
+          <form onSubmit={this.handleSubmit} className='message__input-box'>
             <input type='text' placeholder='Digite sua mensagem...' className='message__input' value={this.props.messageInput.value} onChange={(e) => this.props.typeMessageInput(e.target.value)}/>
-            <span className={`lnr lnr-smile message__emoji ${this.state.showEmojis ? 'active' : ''}`} onClick={e => this.setState({...this.state, showEmojis: !this.state.showEmojis })}/>
+            <span className={`lnr lnr-smile message__emoji ${this.state.showEmojis ? 'active' : ''}`} onClick={e => this.setState({...this.state, showEmojis: !this.state.showEmojis })} />
             <button type="submit" className='lnr lnr-location message__button' />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     )
   }
