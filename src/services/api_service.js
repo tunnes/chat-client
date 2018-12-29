@@ -1,13 +1,13 @@
 import Axios from 'axios'
 
 export const authenticate = data => (
-  Axios.post('http://localhost:3000/authentication', data)
+  Axios.post(`${process.env.API_URL}/authentication`, data)
 )
 
 export const validate = data => (
-  Axios.post('http://localhost:3000/authentication/validation', data)
+  Axios.post(`${process.env.API_URL}/authentication/validation`, data)
 )
 
 export const createUser = data => (
-  Axios.post('http://localhost:3000/user', data)
+  Axios.post(`${process.env.API_URL}/user`, data)
 )

@@ -13,7 +13,7 @@ export default class CableService {
   }
 
   perform (token) {
-    const cable = ActionCable.createConsumer(`ws://localhost:3000/cable?token=${token}`)
+    const cable = ActionCable.createConsumer(`${process.env.WS_URL}/cable?token=${token}`)
 
     const actions = {
       disconnected: this.disconnected,

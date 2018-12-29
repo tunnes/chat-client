@@ -2,6 +2,7 @@
 require("@babel/polyfill")
 
 const webpack = require('webpack')
+const envConfig = require('./config/env')
 const miniCSS = require('mini-css-extract-plugin')
 const optimizeCSS = require('optimize-css-assets-webpack-plugin')
 const optimizeJS = require('terser-webpack-plugin')
@@ -29,7 +30,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new miniCSS({ filename: 'style.css' })
+    new miniCSS({ filename: 'style.css' }),
+    new webpack.DefinePlugin(envConfig.keys)
   ],
   module: {
     rules: [

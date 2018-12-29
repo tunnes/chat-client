@@ -7,7 +7,7 @@
 - [x] Improve components structure (directory, naming and code) and markup.
 - [x] Use constants insted magical strings.
 - [x] Improve store and sagas.
-- [ ] Use env files.
+- [x] Use env files.
 - [ ] Create live preview with github pages.
 - [ ] Create test (with linter and code coverage too).
 - [ ] Create an decent README.md.
