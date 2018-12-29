@@ -1,10 +1,12 @@
 @font-face {
   font-family: 'Linearicons-Free';
-  src:  url('../icons/fonts/Linearicons-Free.eot?88ljbs');
-  src:  url('../icons/fonts/Linearicons-Free.eot?88ljbs#iefix') format('embedded-opentype'),
-    url('../icons/fonts/Linearicons-Free.ttf?88ljbs') format('truetype'),
-    url('../icons/fonts/Linearicons-Free.woff?88ljbs') format('woff'),
-    url('../icons/fonts/Linearicons-Free.svg?88ljbs#Linearicons-Free') format('svg');
+  src:  url(../icon/linearicons.eot);
+
+  src:  url(../icon/linearicons.eot) format('embedded-opentype'),
+        url(../icon/linearicons.ttf) format('truetype'),
+        url(../icon/linearicons.woff) format('woff'),
+        url(../icon/linearicons.svg) format('svg');
+
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +14,6 @@
 
 .lnr {
   font-family: 'Linearicons-Free' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

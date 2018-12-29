@@ -8,6 +8,6 @@
 - [x] Use constants insted magical strings.
 - [x] Improve store and sagas.
 - [x] Use env files.
-- [ ] Create live preview with github pages.
+- [x] Create live preview with heroku.
 - [ ] Create test (with linter and code coverage too).
 - [ ] Create an decent README.md.
