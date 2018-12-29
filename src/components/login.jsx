@@ -39,7 +39,9 @@ class Login extends Component {
         <form className='form__inner'>
           <input placeholder="Usuário" type="text" autoComplete="none" value={this.state.user_name} onChange={this.handleLogin} />
           <input placeholder="Senha" type="password" autoComplete="none" value={this.state.password} onChange={this.handlePassword} />
-          <button className='form__button' onClick={this.handleAuth}> entrar </button>
+          <button className='form__button' onClick={this.handleAuth}>
+            entrar
+          </button>
           <Link to='/singup' className='form__button inverse'>
             cadastrar-se
           </Link>

@@ -58,10 +58,6 @@ export const createGroup = groupData => ({
   payload: groupData
 })
 
-export const toggleGroupForm = () => ({
-  type: 'TOGGLE_GROUP_FORM'
-})
-
 export const createUser = payload => ({
   type: 'CREATE_USER',
   payload: payload
@@ -74,4 +70,9 @@ export const setNavbarOption = option => ({
 
 export const logout = () => ({
   type: 'LOGOUT'
+})
+
+export const toogleEmoji = show => ({
+  type: 'TOOGLE_EMOJI_PIKER',
+  payload: show
 })

@@ -9,7 +9,6 @@ export default class CableService {
     this.received = this.received.bind(this)
     this.connected = this.connected.bind(this)
     this.disconnected = this.disconnected.bind(this)
-    // rejected
   }
 
   perform (token) {

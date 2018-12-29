@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-class Groups extends Component {
+import NavbarItem from './navbar_item'
+export default class Groups extends Component {
   constructor (props) {
     super(props)
     this.toggleUser = this.toggleUser.bind(this)
@@ -25,8 +25,8 @@ class Groups extends Component {
           <div className="navbar__body__input" >
             <input
               type="text"
-              placeholder='Digite o nome para o grupo...'
               value={this.props.groupForm.name}
+              placeholder='Digite o nome para o grupo...'
               onChange={e => this.props.setGroupName(e.target.value)}
             />
             <i
@@ -34,22 +34,18 @@ class Groups extends Component {
               onClick={e => this.props.createGroup(this.props.groupForm)}
             />
           </div>
-          {this.props.contacts.map(contact =>
-            <div className='conversations__item' key={contact.id} onClick={e => this.toggleUser(contact.id)}>
-              <img className='conversations__item__image' src={`https://api.adorable.io/avatars/60/${contact.full_name}`} />
-              <div className='conversations__item__body'>
-                <h4>{contact.full_name}</h4>
-                <h5>{`~${contact.user_name}`}</h5>
-              </div>
-              <div className='conversations__item__select'>
-                {this.props.groupForm.users.find(u => u == contact.id) ? <i className="lnr lnr-checkmark-circle" /> : "" }
-              </div>
-            </div>
+          {this.props.contacts.map((contact, index) =>
+            <NavbarItem
+              key={index}
+              title={contact.full_name}
+              subtitle={`~${contact.user_name}`}
+              onClick={e => this.toggleUser(contact.id)}
+              src={`https://api.adorable.io/avatars/60/${contact.full_name}`}
+              selected={this.props.groupForm.users.find(u => u == contact.id)}
+            />
           )}
         </div>
       </div>
     )
   }
 }
-
-export default Groups

@@ -10,8 +10,6 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, name: action.payload }
     case 'SET_GROUP_USERS':
       return { ...state, users: action.payload }
-    case 'TOGGLE_GROUP_FORM':
-      return { ...state, show: !state.show }
     default:
       return state
   }

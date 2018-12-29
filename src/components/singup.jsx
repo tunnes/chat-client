@@ -11,10 +11,11 @@ class Singup extends Component {
   constructor(props) {
     super(props)
     this.state = INITIAL_STATE
+
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFullName = this.handleFullName.bind(this)
     this.handleUserName = this.handleUserName.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleFullName(event) {

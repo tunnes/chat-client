@@ -3,14 +3,14 @@ import Contacts from '../components/contacts'
 import { bindActionCreators } from 'redux'
 import { setCurrentConversation } from '../store/actions'
 
-const mapStateToProps = state => ({
+const mapState = state => ({
   contacts: state.contacts,
   currentUser: state.user.data,
   conversations: state.conversations
 })
 
-const mapDispatchToProps = dispatchEvent => (
-  bindActionCreators({ setCurrentConversation }, dispatchEvent)
+const mapDispatch = dispatch => (
+  bindActionCreators({ setCurrentConversation }, dispatch)
 )
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts)
+export default connect(mapState, mapDispatch)(Contacts)

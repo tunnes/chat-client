@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import NavbarOption from '../containers/sidebar'
-class Navbar extends Component {
+import NavbarOption from '../containers/navbar_options'
+export default class Navbar extends Component {
   constructor(props) {
     super(props)
+    this.optionType = this.optionType.bind(this)
     this.classActive = this.classActive.bind(this)
   }
 
@@ -10,17 +11,24 @@ class Navbar extends Component {
     if (this.props.layout.navbarOption === option) return 'active'
   }
 
+  optionType(type) {
+    return {
+      className: `navbar__option ${this.classActive(type)}`,
+      onClick: (event => this.props.setNavbarOption(type))
+    }
+  }
+
   render() {
     return (
       <div className='page__nav'>
         <ul className='navbar__options'>
-          <li className={`navbar__option ${this.classActive('CONVERSATIONS')}`} onClick={e => this.props.setNavbarOption('CONVERSATIONS') }>
+          <li { ...this.optionType('CONVERSATIONS') } >
             <span className='navbar__option__label'>Conversas</span>
           </li>
-          <li className={`navbar__option ${this.classActive('CONTACTS')}`} onClick={e => this.props.setNavbarOption('CONTACTS') }>
+          <li { ...this.optionType('CONTACTS') } >
             <span className='navbar__option__label'>Contatos</span>
           </li>
-          <li className={`navbar__option ${this.classActive('CREATE_GROUP')}`} onClick={e => this.props.setNavbarOption('CREATE_GROUP') }>
+          <li { ...this.optionType('CREATE_GROUP') } >
             <span className='navbar__option__label'>Novo Grupo</span>
           </li>
           <li className='navbar__option' onClick={e => this.props.logout() }>
@@ -32,5 +40,3 @@ class Navbar extends Component {
     )
   }
 }
-
-export default Navbar
