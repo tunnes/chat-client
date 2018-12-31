@@ -1,5 +1,5 @@
 import ActionCable from 'actioncable'
-import { fillConversations, fillContacts, addMessage, createConversation } from '../store/actions'
+import { fillConversations, fillContacts, addMessage, addConversation } from '../store/actions'
 
 import * as type from '../constants/action_types'
 export default class CableService {
@@ -9,6 +9,7 @@ export default class CableService {
     this.submit = this.submit.bind(this)
     this.received = this.received.bind(this)
     this.connected = this.connected.bind(this)
+    this.unsubscribe = this.unsubscribe.bind(this)
     this.disconnected = this.disconnected.bind(this)
   }
 
@@ -49,9 +50,14 @@ export default class CableService {
           addMessage(data.payload)
         )
         break
-      case type.CREATE_CONVERSATION:
+      // case type.CREATE_CONVERSATION:
+      //   this.dispatcher(
+      //     createConversation(data.payload)
+      //   )
+      //   break
+      case type.ADD_CONVERSATION:
         this.dispatcher(
-          createConversation(data.payload)
+          addConversation(data.payload)
         )
         break
     }
@@ -61,7 +67,11 @@ export default class CableService {
     this.connection.send(data)
   }
 
-  disconnected () {
+  disconnected() {
     // TODO..
+  }
+
+  unsubscribe() {
+    this.connection.unsubscribe()
   }
 }

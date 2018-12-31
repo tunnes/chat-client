@@ -13,7 +13,8 @@ export const createMessage = function* (action, cable) {
   yield put({ type: type.TYPE_MESSAGE_INPUT, payload: { value: '' } })
 }
 
-export const createConversation = function* (action) {
+export const addConversation = function* (action) {
+  // THIS MAKES MY JOB AN ASS.
   yield put({ type: type.SET_CURRENT_CONVERSATION, payload: action.payload })
 }
 
@@ -71,7 +72,8 @@ export const setCurrentConversation = function* () {
   yield put({type: type.SET_NAVBAR_OPTION, payload: navbar.CONVERSATIONS })
 }
 
-export const logout = () => {
+export const logout = (cable) => {
+  cable.unsubscribe()
   storageDestroy(session.CHAT_USER_TOKEN)
   storageDestroy(session.CHAT_USER_DATA)
 }

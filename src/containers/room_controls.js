@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import RoomControls from '../components/room_controls'
-import { typeMessageInput, createMessage, toogleEmoji } from '../store/actions'
+import { typeMessageInput, createMessage, createConversation, toogleEmoji } from '../store/actions'
 
 const mapState = state => ({
   currentUser: state.user.data,
@@ -12,7 +12,7 @@ const mapState = state => ({
 })
 
 const mapDispatch = dispatch => (
-  bindActionCreators({ typeMessageInput, createMessage, toogleEmoji }, dispatch)
+  bindActionCreators({ typeMessageInput, createMessage, createConversation, toogleEmoji }, dispatch)
 )
 
 export default connect(mapState, mapDispatch)(RoomControls)

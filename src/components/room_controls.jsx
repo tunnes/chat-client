@@ -6,18 +6,24 @@ export default class RoomControls extends Component {
   constructor(props) {
     super(props)
     this.handleEmoji = this.handleEmoji.bind(this)
+    this.messageProps = this.messageProps.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleTypeMessage = this.handleTypeMessage.bind(this)
     this.handleCreateMessage = this.handleCreateMessage.bind(this)
   }
 
   handleCreateMessage() {
-    this.props.createMessage({
+    const message = this.messageProps()
+    message.conversation_id ? this.props.createMessage(message) : this.props.createConversation(message)
+  }
+
+  messageProps() {
+    return {
       user_id: this.props.currentUser.id,
       content: this.props.messageInput.value,
       conversation_id: this.props.currentConversation.id,
-      receiver_id: extractReceiver(this.props.currentConversation.users, this.props.currentUser).id
-    })
+      users: this.props.currentConversation.users.map(user => user.id)
+    }
   }
 
   handleSubmit(event) {

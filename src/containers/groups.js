@@ -5,7 +5,8 @@ import { setGroupName, setGroupUsers, createGroup } from '../store/actions'
 
 const mapState = state => ({
   contacts: state.contacts,
-  groupForm: state.groupForm
+  groupForm: state.groupForm,
+  currentUser: state.user.data
 })
 
 const mapDispatch = dispatchEvent => (

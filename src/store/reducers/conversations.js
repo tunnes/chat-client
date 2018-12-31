@@ -6,7 +6,7 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case type.FILL_CONVERSATIONS:
       return action.payload
-    case type.CREATE_CONVERSATION:
+    case type.ADD_CONVERSATION:
       return state.concat(action.payload)
     case type.ADD_MESSAGE:
       const conversations = state

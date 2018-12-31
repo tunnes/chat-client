@@ -10,7 +10,11 @@ const sagas = function* sagas(cableService) {
     ),
 
     takeLatest(type.CREATE_CONVERSATION,
-      action => sagaService.createConversation(action)
+      action => sagaService.createMessage(action, cableService)
+    ),
+
+    takeLatest(type.ADD_CONVERSATION,
+      action => sagaService.addConversation(action)
     ),
 
     takeLatest(type.SUBMIT_AUTH,
@@ -38,7 +42,7 @@ const sagas = function* sagas(cableService) {
     ),
 
     takeEvery(type.LOGOUT,
-      () => sagaService.logout()
+      () => sagaService.logout(cableService)
     )
   ])
 }

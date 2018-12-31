@@ -20,21 +20,25 @@ export const addMessage = message => ({
   payload: message
 })
 
+export const addConversation = conversation => ({
+  type: type.ADD_CONVERSATION,
+  payload: conversation
+})
+
 export const typeMessageInput = value => ({
   type: type.TYPE_MESSAGE_INPUT,
   payload: { value }
 })
 
-export const createMessage = message_data => ({
+export const createMessage = data => ({
   type: type.CREATE_MESSAGE,
-  payload: message_data
+  payload: data
 })
 
-export const createConversation = conversation => ({
+export const createConversation = data => ({
   type: type.CREATE_CONVERSATION,
-  payload: conversation
+  payload: data
 })
-
 export const submitAuth = authData => ({
   type: type.SUBMIT_AUTH,
   payload: authData

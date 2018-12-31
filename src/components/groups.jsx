@@ -4,6 +4,7 @@ export default class Groups extends Component {
   constructor (props) {
     super(props)
     this.toggleUser = this.toggleUser.bind(this)
+    this.handleCreateGroup = this.handleCreateGroup.bind(this)
   }
 
   toggleUser (user_id) {
@@ -16,6 +17,13 @@ export default class Groups extends Component {
     }
 
     this.props.setGroupUsers(users)
+  }
+
+  handleCreateGroup (event) {
+    let users = this.props.groupForm.users
+    users.push(this.props.currentUser.id)
+    this.props.setGroupUsers(users)
+    this.props.createGroup(this.props.groupForm)
   }
 
   render () {
@@ -31,7 +39,7 @@ export default class Groups extends Component {
             />
             <i
               className="lnr lnr-plus-circle navbar__body__input__confirm"
-              onClick={e => this.props.createGroup(this.props.groupForm)}
+              onClick={this.handleCreateGroup}
             />
           </div>
           {this.props.contacts.map((contact, index) =>
