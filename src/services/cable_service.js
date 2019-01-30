@@ -10,16 +10,15 @@ export default class CableService {
     this.received = this.received.bind(this)
     this.connected = this.connected.bind(this)
     this.unsubscribe = this.unsubscribe.bind(this)
-    this.disconnected = this.disconnected.bind(this)
   }
 
   perform (token) {
+    if (this.connection) this.unsubscribe()
+    
     const cable = ActionCable.createConsumer(`${process.env.WS_URL}/cable?token=${token}`)
 
     const actions = {
-      disconnected: this.disconnected,
-      connected: this.connected,
-      received: this.received,
+      connected: this.connected, received: this.received
     }
 
     const params = {
@@ -50,11 +49,6 @@ export default class CableService {
           addMessage(data.payload)
         )
         break
-      // case type.CREATE_CONVERSATION:
-      //   this.dispatcher(
-      //     createConversation(data.payload)
-      //   )
-      //   break
       case type.ADD_CONVERSATION:
         this.dispatcher(
           addConversation(data.payload)
@@ -65,10 +59,6 @@ export default class CableService {
 
   submit(data) {
     this.connection.send(data)
-  }
-
-  disconnected() {
-    // TODO..
   }
 
   unsubscribe() {
